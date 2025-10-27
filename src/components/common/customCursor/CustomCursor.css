@@ -1,0 +1,49 @@
+.custom-cursor-circle {
+  --circle-size: 40px;
+
+  position: fixed;
+  top: calc(var(--circle-size) * -0.5);
+  left: calc(var(--circle-size) * -0.5);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rotating star in center */
+.custom-cursor-circle::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: var(--primary-color);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  animation: spin 2s linear infinite;
+  transition: all 0.3s ease;
+}
+
+/* Continuous rotation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

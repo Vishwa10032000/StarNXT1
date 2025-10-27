@@ -1,0 +1,41 @@
+/* fonts still apply */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: "BaseNeueTrial";
+  src: url("/src/assets/fonts/BaseNeueTrial-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- Light mode (default) --- */
+:root {
+  --primary-font: "BaseNeueTrial", sans-serif;
+  --secondary-font: "Poppins", sans-serif;
+
+  --primary-color: #FF630F;
+  --background-color: #F5F5F5;
+  --background-color2: #fdeddf;
+  --secondary-color: #333333;
+  --tertiary-color: #FFFFFF;
+  --gray-color: #D4D4D4;
+  --surface-glass: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Dark mode override --- */
+:root[data-theme="dark"] {
+  --primary-color: #FF7A34;
+  --background-color: #4b4b4b;
+  --background-color2: #333333;
+  --secondary-color: #E5E7EB;
+  --tertiary-color: #2a2a2c;
+  --gray-color: #2a2f3a;
+  --surface-glass: rgba(78, 78, 78, 0.6);
+}
+
+body {
+  font-family: var(--secondary-font);
+  background: var(--background-color);
+  color: var(--secondary-color);
+  transition: background-color .25s ease, color .25s ease;
+}

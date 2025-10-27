@@ -1,0 +1,10 @@
+.global{
+  overflow-x: hidden !important;
+  padding: 20px;
+  background-color: var(--background-color2);
+}
+
+::selection{
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
+}
